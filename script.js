@@ -28,7 +28,7 @@ class Card {
 
     createElement() {
         this.element = document.createElement('div');
-        this.element.className = 'card';
+        this.element.styleName = 'card';
         this.element.textContent = this.value;
         this.element.dataset.index = this.index;
         this.element.addEventListener('click', () => this.toggleSelection());
@@ -126,7 +126,7 @@ class NumberSortingGame {
             //     description: 'Swaps first & last',
             //     requires: 2,
             //     action: () => this.swapSelectedCards(),
-            //     className: 'requires-two'
+            //     styleName: 'requires-two'
             // },
             {
                 id: 'add',
@@ -134,7 +134,7 @@ class NumberSortingGame {
                 description: 'Add 1',
                 requires: 1,
                 action: () => this.modifySelectedCards(1),
-                className: 'requires-one'
+                styleName: 'requires-one'
             },
             {
                 id: 'subtract',
@@ -142,7 +142,7 @@ class NumberSortingGame {
                 description: 'Subtract 1',
                 requires: 1,
                 action: () => this.modifySelectedCards(-1),
-                className: 'requires-one'
+                styleName: 'requires-one'
             },
             {
                 id: 'add',
@@ -150,7 +150,7 @@ class NumberSortingGame {
                 description: 'Add 2',
                 requires: 1,
                 action: () => this.modifySelectedCards(2),
-                className: 'requires-one'
+                styleName: 'requires-one'
             },
             {
                 id: 'subtract',
@@ -158,7 +158,7 @@ class NumberSortingGame {
                 description: 'Subtract 2',
                 requires: 1,
                 action: () => this.modifySelectedCards(-2),
-                className: 'requires-one'
+                styleName: 'requires-one'
             },
             {
                 id: 'upshift',
@@ -166,7 +166,7 @@ class NumberSortingGame {
                 description: 'Shift up by 1',
                 requires: 0, // Works with any number of cards
                 action: () => this.shiftSelectedCards(1),
-                className: 'shift-up'
+                styleName: 'shift-up'
             },
             {
                 id: 'downshift',
@@ -174,7 +174,7 @@ class NumberSortingGame {
                 description: 'Shift down by 1',
                 requires: 0, // Works with any number of cards
                 action: () => this.shiftSelectedCards(-1),
-                className: 'shift-down'
+                styleName: 'shift-down'
             },
             {
                 id: 'upshift',
@@ -182,7 +182,7 @@ class NumberSortingGame {
                 description: 'Shift up by 1',
                 requires: 0, // Works with any number of cards
                 action: () => this.shiftSelectedCards(1),
-                className: 'shift-up'
+                styleName: 'shift-up'
             },
             {
                 id: 'downshift',
@@ -190,7 +190,7 @@ class NumberSortingGame {
                 description: 'Shift down by 1',
                 requires: 0, // Works with any number of cards
                 action: () => this.shiftSelectedCards(-1),
-                className: 'shift-down'
+                styleName: 'shift-down'
             },
             {
                 id: 'reverse',
@@ -198,7 +198,7 @@ class NumberSortingGame {
                 description: 'Reverse order',
                 requires: 0, // 0 means any number
                 action: () => this.reverseSelectedCards(),
-                className: 'requires-any'
+                styleName: 'requires-any'
             },
             {
                 id: 'reverse',
@@ -206,7 +206,7 @@ class NumberSortingGame {
                 description: 'Reverse order',
                 requires: 0, // 0 means any number
                 action: () => this.reverseSelectedCards(),
-                className: 'requires-any'
+                styleName: 'requires-any'
             }
         ];
     }
@@ -250,7 +250,7 @@ class NumberSortingGame {
         
         this.actionBank.forEach((actionCard, index) => {
             const element = document.createElement('div');
-            element.className = `action-card ${actionCard.className}`;
+            element.styleName = `action-card ${actionCard.styleName}`;
             element.dataset.action = actionCard.id;
             element.dataset.bankIndex = index;
             element.innerHTML = `
